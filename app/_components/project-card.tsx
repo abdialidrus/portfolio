@@ -1,5 +1,7 @@
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
+
 
 interface ProjectType {
     name: string;
@@ -20,7 +22,7 @@ interface ProjectCardProps {
     technologies: string[];
 }
 
-const ProjectCard = ({ id, name, description, coverImgUrl, type, github, images, technologies }: ProjectCardProps) => {
+const ProjectCard = ({ id, name, description, type, images, technologies }: ProjectCardProps) => {
     return (
         <a
             href=""
@@ -30,10 +32,12 @@ const ProjectCard = ({ id, name, description, coverImgUrl, type, github, images,
         >
             <Card className="group relative hover:shadow-xl transition-shadow duration-300 overflow-hidden p-0">
                 <div className="relative overflow-hidden">
-                    <img
+                    <Image
                         src={images[0].url}
                         alt={name}
                         className="w-full h-45 object-cover transform transition-transform duration-300 group-hover:scale-105"
+                        width={600}
+                        height={400}
                     />
 
                     {/* Tag Badge */}

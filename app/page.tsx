@@ -2,7 +2,7 @@ import { getProjects } from "./actions/getProjects";
 import ProjectList from "./_components/project-list";
 
 export default async function Home() {
-  const { success, error, data } = await getProjects();
+  const { data } = await getProjects();
 
   return (
     <main className="flex min-h-screen flex-col p-10">
